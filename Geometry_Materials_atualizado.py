@@ -677,8 +677,10 @@ Extremos_Inf_Discretiza_Col = 1 # Mesh size for the top end zones
 Extremos_Sup_Discretiza_Col = 1   # Mesh size for the bottom end zones
 
 # Column number  [1, 2, 3, 4]   from left to right             
-Length_bottom =   [0.625]    # Length of the bottom of the column [m]
-Length_top =  [0.625]   # Length of the top of the column [m]
+
+Length_bottom = [0.625, 0.625]
+Length_top    = [0.625, 0.625]
+
 
 # =============================================================================
 #                          Mesh Beams (X)
@@ -904,11 +906,11 @@ barras_camadas_value = [nbarras_sup_beam, nbarras_inf_beam]
 PosIniCam_value= [h_beam/2-cobrimento_beam, cobrimento_beam-h_beam/2]
 PosFinalCam_value = [h_beam/2-cobrimento_beam, cobrimento_beam-h_beam/2]
 
-IntegraTag,SectionTag,Ec,Ast,rho_cc,Ae,Acc,ke,rho_x,rho_y,flx,fly,A,B,fc_confinado,ec_confinado,xn,n,r,fc_uncon = sec_fibrasconfinadas(SectionTag = SectionTag_beam_1, IntegraTag = BeamIntegraTag_1 , ConcretoC_Tag = ConcretoC_Tag_beam1,ConcretoNC_Tag=ConcretoNC_Tag_beam1,Steel_Tag = [Material_Steel_12_5mm_Tag,Material_Steel_8mm_Tag], MinMaxSteel_Tag = [MinMaxTag_steel_12_5mm,MinMaxTag_steel_8mm] , numIntgrPts=numIntgrPts_extBeam, 
+IntegraTag,SectionTag,Ec,Ast,rho_cc,Ae,Acc,ke,rho_x,rho_y,flx,fly,A,B,fc_confinado,ec_confinado,xn,n,r,fc_uncon = sec_fibrasconfinadas(SectionTag = SectionTag_beam_1, IntegraTag = BeamIntegraTag_1 , ConcretoC_Tag = ConcretoC_Tag_beam1,ConcretoNC_Tag=ConcretoNC_Tag_beam1,Steel_Tag = [Material_Steel_14mm_Tag,Material_Steel_10mm_Tag], MinMaxSteel_Tag = [MinMaxTag_steel_14mm,MinMaxTag_steel_10mm] , numIntgrPts=numIntgrPts_extBeam, 
                 b_beam=b_beam, h_beam=h_beam, fc = fc_normal, cobrimento = cobrimento_beam, 
-                diam_longitudinal = diam_longitudinal_value , fy_ = [fy_normal_12_5mm, fy_normal_8mm], Es_ =  Es_normal,
+                diam_longitudinal = diam_longitudinal_value , fy_ = [fy_normal_14mm, fy_normal_10mm], Es_ =  Es_normal,
                     barras_camadas = barras_camadas_value, PosIniCam = PosIniCam_value, PosFinalCam = PosFinalCam_value,
-                    diam_transversal = diam_transversal_beam, espacamento_s = espacamento_s_beam, npernas_xx = 2 , npernas_yy = 2, fy_transv = fyw_normal, MinStrain_Steel = [MinStrain_Steel_12_5mm, MinStrain_Steel_8mm], MaxStrain_Steel = [MaxStrain_Steel_12_5mm, MaxStrain_Steel_8mm], b_steel = [b_steel_12_5mm, b_steel_8mm], NumDivCore_z = NumDivCore_z_beam, NumDivCore_y = NumDivCore_y_beam, NumDivInf_z = NumDivInf_z_beam, NumDivInf_y = NumDivInf_y_beam, NumDivSup_z = NumDivSup_z_beam, NumDivSup_y = NumDivSup_y_beam, NumDivDir_z = NumDivDir_z_beam, NumDivDir_y = NumDivDir_y_beam, NumDivEsq_z = NumDivEsq_z_beam, NumDivEsq_y = NumDivEsq_y_beam
+                    diam_transversal = diam_transversal_beam, espacamento_s = espacamento_s_beam, npernas_xx = 2 , npernas_yy = 2, fy_transv = fyw_normal, MinStrain_Steel = [MinStrain_Steel_14mm, MinStrain_Steel_10mm], MaxStrain_Steel = [MaxStrain_Steel_14mm, MaxStrain_Steel_10mm], b_steel = [b_steel_14mm, b_steel_10mm], NumDivCore_z = NumDivCore_z_beam, NumDivCore_y = NumDivCore_y_beam, NumDivInf_z = NumDivInf_z_beam, NumDivInf_y = NumDivInf_y_beam, NumDivSup_z = NumDivSup_z_beam, NumDivSup_y = NumDivSup_y_beam, NumDivDir_z = NumDivDir_z_beam, NumDivDir_y = NumDivDir_y_beam, NumDivEsq_z = NumDivEsq_z_beam, NumDivEsq_y = NumDivEsq_y_beam
                         )
 
 
@@ -969,11 +971,11 @@ barras_camadas_value = [nbarras_sup_beam, nbarras_inf_beam]
 PosIniCam_value= [h_beam/2-cobrimento_beam, cobrimento_beam-h_beam/2]
 PosFinalCam_value = [h_beam/2-cobrimento_beam, cobrimento_beam-h_beam/2]
 
-IntegraTag,SectionTag,Ec,Ast,rho_cc,Ae,Acc,ke,rho_x,rho_y,flx,fly,A,B,fc_confinado,ec_confinado,xn,n,r,fc_uncon = sec_fibrasconfinadas(SectionTag = SectionTag_beam_3, IntegraTag = BeamIntegraTag_3 , ConcretoC_Tag = ConcretoC_Tag_beam3,ConcretoNC_Tag=ConcretoNC_Tag_beam3, Steel_Tag = [Material_Steel_8mm_Tag,Material_Steel_8mm_Tag],MinMaxSteel_Tag = [MinMaxTag_steel_8mm,MinMaxTag_steel_8mm], numIntgrPts=numIntgrPts_middleBeam, 
+IntegraTag,SectionTag,Ec,Ast,rho_cc,Ae,Acc,ke,rho_x,rho_y,flx,fly,A,B,fc_confinado,ec_confinado,xn,n,r,fc_uncon = sec_fibrasconfinadas(SectionTag = SectionTag_beam_3, IntegraTag = BeamIntegraTag_3 , ConcretoC_Tag = ConcretoC_Tag_beam3,ConcretoNC_Tag=ConcretoNC_Tag_beam3, Steel_Tag = [Material_Steel_10mm_Tag,Material_Steel_10mm_Tag],MinMaxSteel_Tag = [MinMaxTag_steel_10mm,MinMaxTag_steel_10mm], numIntgrPts=numIntgrPts_middleBeam, 
                 b_beam=b_beam, h_beam=h_beam, fc = fc_normal, cobrimento = cobrimento_beam, 
-                diam_longitudinal = diam_longitudinal_value , fy_ = [fy_normal_8mm, fy_normal_8mm], Es_ =  Es_normal,
+                diam_longitudinal = diam_longitudinal_value , fy_ = [fy_normal_10mm, fy_normal_10mm], Es_ =  Es_normal,
                     barras_camadas = barras_camadas_value, PosIniCam = PosIniCam_value, PosFinalCam = PosFinalCam_value,
-                    diam_transversal = diam_transversal_beam, espacamento_s = espacamento_s_beam_int, npernas_xx = 2 , npernas_yy = 2, fy_transv = fyw_normal,  MinStrain_Steel = [MinStrain_Steel_8mm, MinStrain_Steel_8mm], MaxStrain_Steel = [MaxStrain_Steel_8mm, MaxStrain_Steel_8mm], b_steel = [b_steel_8mm, b_steel_8mm],NumDivCore_z = NumDivCore_z_beam, NumDivCore_y = NumDivCore_y_beam, NumDivInf_z = NumDivInf_z_beam, NumDivInf_y = NumDivInf_y_beam, NumDivSup_z = NumDivSup_z_beam, NumDivSup_y = NumDivSup_y_beam, NumDivDir_z = NumDivDir_z_beam, NumDivDir_y = NumDivDir_y_beam, NumDivEsq_z = NumDivEsq_z_beam, NumDivEsq_y = NumDivEsq_y_beam
+                    diam_transversal = diam_transversal_beam, espacamento_s = espacamento_s_beam_int, npernas_xx = 2 , npernas_yy = 2, fy_transv = fyw_normal,  MinStrain_Steel = [MinStrain_Steel_10mm, MinStrain_Steel_10mm], MaxStrain_Steel = [MaxStrain_Steel_10mm, MaxStrain_Steel_10mm], b_steel = [b_steel_10mm, b_steel_10mm],NumDivCore_z = NumDivCore_z_beam, NumDivCore_y = NumDivCore_y_beam, NumDivInf_z = NumDivInf_z_beam, NumDivInf_y = NumDivInf_y_beam, NumDivSup_z = NumDivSup_z_beam, NumDivSup_y = NumDivSup_y_beam, NumDivDir_z = NumDivDir_z_beam, NumDivDir_y = NumDivDir_y_beam, NumDivEsq_z = NumDivEsq_z_beam, NumDivEsq_y = NumDivEsq_y_beam
                         )
 
 
@@ -1035,11 +1037,11 @@ barras_camadas_value = [nbarras_sup_beam, nbarras_inf_beam]
 PosIniCam_value= [h_beam/2-cobrimento_beam, cobrimento_beam-h_beam/2]
 PosFinalCam_value = [h_beam/2-cobrimento_beam, cobrimento_beam-h_beam/2]
 
-IntegraTag,SectionTag,Ec,Ast,rho_cc,Ae,Acc,ke,rho_x,rho_y,flx,fly,A,B,fc_confinado,ec_confinado,xn,n,r,fc_uncon = sec_fibrasconfinadas(SectionTag = SectionTag_beam_2, IntegraTag = BeamIntegraTag_2 , ConcretoC_Tag = ConcretoC_Tag_beam2, ConcretoNC_Tag=ConcretoNC_Tag_beam2, Steel_Tag = [Material_Steel_10mm_Tag,Material_Steel_8mm_Tag],MinMaxSteel_Tag = [MinMaxTag_steel_10mm,MinMaxTag_steel_8mm] ,numIntgrPts=numIntgrPts_extInteriorBeam, 
+IntegraTag,SectionTag,Ec,Ast,rho_cc,Ae,Acc,ke,rho_x,rho_y,flx,fly,A,B,fc_confinado,ec_confinado,xn,n,r,fc_uncon = sec_fibrasconfinadas(SectionTag = SectionTag_beam_2, IntegraTag = BeamIntegraTag_2 , ConcretoC_Tag = ConcretoC_Tag_beam2, ConcretoNC_Tag=ConcretoNC_Tag_beam2, Steel_Tag = [Material_Steel_10mm_Tag,Material_Steel_10mm_Tag],MinMaxSteel_Tag = [MinMaxTag_steel_10mm,MinMaxTag_steel_10mm] ,numIntgrPts=numIntgrPts_extInteriorBeam, 
                 b_beam=b_beam, h_beam=h_beam, fc = fc_normal, cobrimento = cobrimento_beam, 
-                diam_longitudinal = diam_longitudinal_value , fy_ = [fy_normal_10mm, fy_normal_8mm], Es_ =  Es_normal,
+                diam_longitudinal = diam_longitudinal_value , fy_ = [fy_normal_10mm, fy_normal_10mm], Es_ =  Es_normal,
                     barras_camadas = barras_camadas_value, PosIniCam = PosIniCam_value, PosFinalCam = PosFinalCam_value,
-                    diam_transversal = diam_transversal_beam, espacamento_s = espacamento_s_beam, npernas_xx = 2 , npernas_yy = 2, fy_transv = fyw_normal,  MinStrain_Steel = [MinStrain_Steel_10mm, MinStrain_Steel_8mm], MaxStrain_Steel = [MaxStrain_Steel_10mm, MaxStrain_Steel_8mm], b_steel = [b_steel_10mm, b_steel_8mm],NumDivCore_z = NumDivCore_z_beam, NumDivCore_y = NumDivCore_y_beam, NumDivInf_z = NumDivInf_z_beam, NumDivInf_y = NumDivInf_y_beam, NumDivSup_z = NumDivSup_z_beam, NumDivSup_y = NumDivSup_y_beam, NumDivDir_z = NumDivDir_z_beam, NumDivDir_y = NumDivDir_y_beam, NumDivEsq_z = NumDivEsq_z_beam, NumDivEsq_y = NumDivEsq_y_beam
+                    diam_transversal = diam_transversal_beam, espacamento_s = espacamento_s_beam, npernas_xx = 2 , npernas_yy = 2, fy_transv = fyw_normal,  MinStrain_Steel = [MinStrain_Steel_10mm, MinStrain_Steel_10mm], MaxStrain_Steel = [MaxStrain_Steel_10mm, MaxStrain_Steel_10mm], b_steel = [b_steel_10mm, b_steel_10mm],NumDivCore_z = NumDivCore_z_beam, NumDivCore_y = NumDivCore_y_beam, NumDivInf_z = NumDivInf_z_beam, NumDivInf_y = NumDivInf_y_beam, NumDivSup_z = NumDivSup_z_beam, NumDivSup_y = NumDivSup_y_beam, NumDivDir_z = NumDivDir_z_beam, NumDivDir_y = NumDivDir_y_beam, NumDivEsq_z = NumDivEsq_z_beam, NumDivEsq_y = NumDivEsq_y_beam
                         )
 
 
@@ -1161,7 +1163,8 @@ for pav in range(1, num_pav):  # Para cada intervalo vertical entre pavimentos
     # Para cada tramo en x
     middle_por_tramo = []
     for tramox in range(num_tramox):
-        length_mid = altura_total - Length_bottom[tramox] - Length_top[tramox]
+        length_mid = altura_total - Length_bottom[tramox-1] - Length_top[tramox-1]
+        # length_mid = altura_total - Length_bottom - Length_top
         middle_por_tramo.append(length_mid)
     Length_middle.append(middle_por_tramo)
 
@@ -1169,10 +1172,12 @@ for pav in range(1, num_pav):  # Para cada intervalo vertical entre pavimentos
 # cada elemento corresponde a un pavimento y dentro tiene un arreglo con longitudes medias por tramo
 print("Length_middle:", Length_middle)
 
+len(X_spans) == len(Length_bottom)
+
 # Length_middle: [[0.376, 0.376, 0.376], [0.3710000000000001, 0.3710000000000001, 0.3710000000000001], [0.371, 0.371, 0.371]]   Length_middle[pav][tramox] 
 eleColumn_section_map = {}
 for pav in range(1,num_pav+1):
-    for tramox in range(1,num_tramox+1):
+    for tramox in range(1, len(X_spans)+1):
         
         # Crea todos los NODOS PRINCIPALES de la estructura (intersecciones de vigas y columnas).
         ops.node(int(str(pav)+str(0)+str(tramox)), X_spans[tramox-1], (Z_pavs[pav-1]))
@@ -1311,25 +1316,25 @@ for _pav in range(2, num_pav + 1):
 
 # ANDAR 1
 beam_section_config[(2, 1)]['ext_izq'] = BeamIntegraTag_2
-beam_section_config[(3, 1)]['ext_izq'] = BeamIntegraTag_2   
-beam_section_config[(4, 1)]['ext_izq'] = BeamIntegraTag_2  
+beam_section_config[(2, 1)]['ext_izq'] = BeamIntegraTag_2   
+beam_section_config[(2, 1)]['ext_izq'] = BeamIntegraTag_2  
 
 beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1
-beam_section_config[(3, 1)]['int_der'] = BeamIntegraTag_1   
-beam_section_config[(4, 1)]['int_der'] = BeamIntegraTag_1   
+beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1   
+beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1   
 
 # ANDAR 2
-beam_section_config[(2, 2)]['int_izq'] = BeamIntegraTag_1
-beam_section_config[(2, 2)]['int_der'] = BeamIntegraTag_1
+beam_section_config[(2, 1)]['int_izq'] = BeamIntegraTag_1
+beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1
 
 # ANDAR 3
-beam_section_config[(2, 3)]['int_izq'] = BeamIntegraTag_1
-beam_section_config[(3, 3)]['int_izq'] = BeamIntegraTag_1   
-beam_section_config[(4, 3)]['int_izq'] = BeamIntegraTag_1  
+# beam_section_config[(2, 3)]['int_izq'] = BeamIntegraTag_1
+# beam_section_config[(3, 3)]['int_izq'] = BeamIntegraTag_1   
+# beam_section_config[(4, 3)]['int_izq'] = BeamIntegraTag_1  
 
-beam_section_config[(2, 3)]['ext_der'] = BeamIntegraTag_2
-beam_section_config[(3, 3)]['ext_der'] = BeamIntegraTag_2  
-beam_section_config[(4, 3)]['ext_der'] = BeamIntegraTag_2   
+# beam_section_config[(2, 3)]['ext_der'] = BeamIntegraTag_2
+# beam_section_config[(3, 3)]['ext_der'] = BeamIntegraTag_2  
+# beam_section_config[(4, 3)]['ext_der'] = BeamIntegraTag_2   
 
 
 
