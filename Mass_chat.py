@@ -1,9 +1,9 @@
 import openseespy.opensees as ops
 import numpy as np
-import Geometry_Materials_atualizado as geom
 import opsvis as opsv
 import matplotlib.pyplot as plt
 
+exec(open('Geometry_Materials_atualizado_certo.py').read())
 # ---------------------------------------------------------
 # DADOS
 # ---------------------------------------------------------
