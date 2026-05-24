@@ -49,7 +49,7 @@ def sec_fibrasconfinadas(SectionTag = 3, IntegraTag = 3, ConcretoC_Tag = 4, Conc
 
     ConcretoNC_Tag_value = ConcretoNC_Tag
     fc_inicial = (fc)*(10**6)            #resistência a compressao aos 28dias (negativo)
-    Ec = 8200*fc**(3/8)*(10**6) #N/m²            #Modulo de elasticidade
+    Ec = 0.5*8200*fc**(3/8)*(10**6) #N/m²            #Modulo de elasticidade
     epsc = 2*fc_inicial/Ec             #Deformação máxima do concreto
     fpc_u_NC = 0.2*fc_inicial             #tensão na ruptura
     epsc_u_NC = 5*epsc # 0.009       # estava 0.009 e5*epsc deformação na ruptura
