@@ -394,20 +394,20 @@ def sec_fibrasconfinadas(SectionTag = 3, IntegraTag = 3, ConcretoC_Tag = 4, Conc
     print("ConcretoNC_Tag_value =", ConcretoNC_Tag_value)
     print("MinMaxSteel_Tag =", MinMaxSteel_Tag)
 
-    matcolor_dict = {
-        ConcretoC_Tag: 'red',               # concreto confinado
-        ConcretoNC_Tag_value: 'lightgrey',  # concreto no confinado
-        MinMaxSteel_Tag[0]: 'steelblue',    # acero capa 1
-        MinMaxSteel_Tag[1]: 'steelblue'     # acero capa 2
-    }
+    # matcolor_dict = {
+    #     ConcretoC_Tag: 'red',               # concreto confinado
+    #     ConcretoNC_Tag_value: 'lightgrey',  # concreto no confinado
+    #     MinMaxSteel_Tag[0]: 'steelblue',    # acero capa 1
+    #     MinMaxSteel_Tag[1]: 'steelblue'     # acero capa 2
+    # }
 
-    opsv.plot_fiber_section(
-        fib_sec_1,
-        fillflag=1,
-        matcolor_dict=matcolor_dict
-    )
-    plt.axis('equal')
-    # plt.show()
+    # opsv.plot_fiber_section(
+    #     fib_sec_1,
+    #     fillflag=1,
+    #     matcolor_dict=matcolor_dict
+    # )
+    # plt.axis('equal')
+    # # plt.show()
         
     
     #No opensees deve aplicar esse comando antes de inserir no forcebeamcolumn
@@ -606,7 +606,7 @@ numIntgrPts_middleColumn = 2   # Middle of the columns
 # pARA Formulación ForceBeamColumn
 maxIter = 1000  # 10000  Estos parámetros no estpan afectando en nada el análisis
 tol = 1e-6 # Estos parámetros no estpan afectando en nada el análisis
-
+    #-7 e -8 p ver se mu=elhora
 # =============================================================================
 #                           Model Geometry Definition
 # =============================================================================
@@ -1322,16 +1322,16 @@ for _pav in range(2, num_pav + 1):
 
 # ANDAR 1
 beam_section_config[(2, 1)]['ext_izq'] = BeamIntegraTag_2
-beam_section_config[(2, 1)]['ext_izq'] = BeamIntegraTag_2   
+beam_section_config[(2, 1)]['ext_der'] = BeamIntegraTag_2   
 beam_section_config[(2, 1)]['ext_izq'] = BeamIntegraTag_2  
 
-beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1
-beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1   
-beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1   
+beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_3
+beam_section_config[(2, 1)]['int_izq'] = BeamIntegraTag_3   
+beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_3
 
 # ANDAR 2
-beam_section_config[(2, 1)]['int_izq'] = BeamIntegraTag_1
-beam_section_config[(2, 1)]['int_der'] = BeamIntegraTag_1
+beam_section_config[(2, 1)]['mid'] = BeamIntegraTag_1
+beam_section_config[(2, 1)]['mid'] = BeamIntegraTag_1
 
 # ANDAR 3
 # beam_section_config[(2, 3)]['int_izq'] = BeamIntegraTag_1
@@ -1497,5 +1497,12 @@ for no in nome_nos:
 # plt.figure()
 # plt.show()
 
-print('Geomtry definided')
+print('Geometry definided')
    
+section_names = {
+    1: 'B3',
+    2: 'B1',
+    3: 'B2',
+    5: 'C1',
+    6: 'C2'
+}
