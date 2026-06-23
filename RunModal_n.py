@@ -68,7 +68,7 @@ exec(open(os.path.join(base_dir, 'VerticalLoad.py')).read(), globals())
 import os
 base_dir = os.path.dirname(__file__)
 
-exec(open(os.path.join(base_dir, 'Mass_atual.py')).read(), globals())
+exec(open(os.path.join(base_dir, 'Mass_chat.py')).read(), globals())
 
 
 # exec(open('Mass.py').read())
@@ -143,3 +143,50 @@ Propriedades_Modal, T1_static = analise_modal(numero_de_modos = numEigen)
 # Obtendo qual modo de vibração é Flexional X
 Modo1x = 1 + Propriedades_Modal['partiMassRatiosMX'].index(max(Propriedades_Modal['partiMassRatiosMX']))
 T1x = Propriedades_Modal['eigenPeriod'][Modo1x - 1]
+
+
+fig, ax = plt.subplots()
+opsv.plot_model(node_labels=0,
+                element_labels=0,
+                node_supports=False,
+                ax=ax)
+
+for eleTag in ops.getEleTags():
+
+    node_i, node_j = ops.eleNodes(eleTag)
+
+    xi, yi = ops.nodeCoord(node_i)
+    xj, yj = ops.nodeCoord(node_j)
+
+    xm = (xi + xj)/2
+    ym = (yi + yj)/2
+
+    if eleTag in eleBeam_section_map:
+
+        integraTag = eleBeam_section_map[eleTag]
+        sec_name = section_names.get(integraTag, str(integraTag))
+
+        ax.text(
+            xm,
+            ym + 0.05,
+            sec_name,
+            color='green',
+            fontsize=10,
+            ha='center'
+        )
+
+    elif eleTag in eleColumn_section_map:
+
+        integraTag = eleColumn_section_map[eleTag]
+        sec_name = section_names.get(integraTag, str(integraTag))
+
+        ax.text(
+            xm + 0.05,
+            ym,
+            sec_name,
+            color='red',
+            fontsize=10,
+            ha='center'
+        )
+
+plt.show()
