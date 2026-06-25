@@ -65,13 +65,19 @@ massPav =  [0.0, 2147.3224999999998] #veio do Mass_ok
 diretorio_atual = os.path.dirname(os.path.abspath(__file__))
 
 # Constrói o caminho a partir dali
-pasta_terremotos = os.path.join(diretorio_atual, 'AT2_por_faixa_PGAgeom', '0.20-0.30')
+pasta_terremotos = os.path.join(
+    diretorio_atual,
+    'Terremotos',
+    'AT2_por_faixa_PGAgeom',
+    '0.80-0.90'
+)
+# pasta_terremotos = os.path.join(diretorio_atual, 'AT2_por_faixa_PGAgeom', '0.00-0.10')
 # pasta_terremotos = './AT2_por_faixa_PGAgeom/0.20-0.30'
 # pasta_terremotos = './Terremotos'
 
 # Lista explícita de sismos (nomes dos arquivos .at2).
 # Use None para rodar TODOS os arquivos .at2 encontrados na pasta.
-filtro_terremotos = None
+filtro_terremotos = ['RSN4876_CHUETSU_65059EW.AT2', 'RSN4876_CHUETSU_65059NS.AT2']
 # filtro_terremotos = ['RSN6_IMPVALL.I_I-ELC180.AT2']
 # filtro_terremotos = ['RSN1_HELENA.A_A-HMC180.at2']
 # filtro_terremotos = ['RSN1007_NORTHR_UNI005.at2', 'RSN0900_LANDERS_LCN260.at2']
@@ -797,9 +803,9 @@ for idx_sismo, terremoto in enumerate(terremotos):
             terremoto=terremoto, Z_pavs=Z_pavs)
         MaxDESLOC = modelo2D_deslocamento(
             terremoto=terremoto, Z_pavs=Z_pavs)
-        # MaxVEL_ABS_pavs_x, MaxVEL_ABS, MaxVEL_Rel = modelo2D_velocidade(
-        #     terremoto=terremoto, Z_pavs=Z_pavs,
-        #     vel_history=vel_history, pasta_terremotos=pasta_terremotos)
+        MaxVEL_ABS_pavs_x, MaxVEL_ABS, MaxVEL_Rel = modelo2D_velocidade(
+            terremoto=terremoto, Z_pavs=Z_pavs,
+            vel_history=vel_history, pasta_terremotos=pasta_terremotos)
         MaxAccels_ABS_pavs_x, MaxACCEL_ABS = modelo2D_aceleracaoABS(
             terremoto=terremoto, Z_pavs=Z_pavs)
 
